@@ -19,19 +19,32 @@ switch ($action) {
          ************************************************/
         // 1. make sure the user enters a name
         // 2. display the name with only the first letter capitalized
-
+	
+	if (empty($name)) {
+		$message = 'Please enter a name.' ;
+		$name = ucfirst($name)
+	}
+	
         /*************************************************
          * validate and process the email address
          ************************************************/
         // 1. make sure the user enters an email
         // 2. make sure the email address has at least one @ sign and one dot character
+	if (empty($email)) {
+		$message = 'Please enter an email.' ;
+	}
+	
 
         /*************************************************
          * validate and process the phone number
          ************************************************/
         // 1. make sure the user enters at least seven digits, not including formatting characters
         // 2. format the phone number like this 123-4567 or this 123-456-7890
-
+	
+	if (strlen($phone) < 7 ) {
+		$message = 'Check phone number again.' ;
+	}
+	
         /*************************************************
          * Display the validation message
          ************************************************/
